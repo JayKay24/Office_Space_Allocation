@@ -25,10 +25,13 @@ class PersonTest(unittest.TestCase):
 
 class RoomTest(unittest.TestCase):
     def setUp(self):
-        self.room = room.Room()
+        self.room = room.Room("Orange")
 
     def testRoomHasFilledAttribute(self):
         self.assertEqual(self.room.filled, False)
+
+    def testRoomHasNameAttribute(self):
+        self.assertEqual(self.room.name, "Orange")
 
 class LivingSpaceTest(unittest.TestCase):
     def setUp(self):
