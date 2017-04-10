@@ -83,5 +83,14 @@ class CreateLivingSpaceTests(unittest.TestCase):
         self.living_space = create_living_space(self.name)
         self.assertEqual(self.living_space.name, "Red")
 
+class CreatePersonTests(unittest.TestCase):
+    def setUp(self):
+        self.name = "James"
+        self.status = "Fellow"
+
+    def testCreatePerson(self):
+        self.person = create_person(self.name, self.status)
+        self.assertEqual(self.status, "Fellow")
+
 if __name__ == "__main__":
     unittest.main()
