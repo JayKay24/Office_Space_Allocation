@@ -72,8 +72,16 @@ class CreateOfficeTests(unittest.TestCase):
         self.name = "Blue"
 
     def testCreateOffice(self):
-        office = create_office(self.name)
+        self.office = create_office(self.name)
         self.assertEqual(self.office.name, "Blue")
+
+class CreateLivingSpaceTests(unittest.TestCase):
+    def setUp(self):
+        self.name = "Red"
+
+    def testCreateLivingSpace(self):
+        self.living_space = create_living_space(self.name)
+        self.assertEqual(self.living_space.name, "Red")
 
 if __name__ == "__main__":
     unittest.main()
