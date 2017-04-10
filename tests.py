@@ -46,5 +46,12 @@ class FellowTest(unittest.TestCase):
     def testFellowHasOptIn(self):
         self.assertEqual(self.fellow.opt_in, False)
 
+class StaffTest(unittest.TestCase):
+    def setUp(self):
+        self.staff = staff.Staff("James", "Staff")
+
+    def testStaffHasName(self):
+        self.assertEqual(self.staff.name, "James")
+
 if __name__ == "__main__":
     unittest.main()
