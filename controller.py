@@ -34,4 +34,6 @@ def add_person(person):
     Accepts an object to append to the people list.
     """
     people.append(person)
+    print("Person added successfully")
+    print(people)
     return people
