@@ -1,4 +1,3 @@
-import 
 class Dojo:
     """
     This class accepts a list of offices and living spaces objects and

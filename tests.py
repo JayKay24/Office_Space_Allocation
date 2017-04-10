@@ -61,7 +61,10 @@ class StaffTest(unittest.TestCase):
 class CreateOfficeTests(unittest.TestCase):
     def setUp(self):
         self.name = "Blue"
-        self.office = office.Office(self.name)
+
+    def testCreateOffice(self):
+        office = create_office(self.name)
+        self.assertEqual(self.office.name, "Blue")
 
 if __name__ == "__main__":
     unittest.main()

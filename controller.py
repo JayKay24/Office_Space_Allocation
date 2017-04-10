@@ -2,7 +2,6 @@
 This module imports all the necessary classes to implement the controller aspect
 of the MVC framework.
 """
-
 from dojo import Dojo
 from fellow import Fellow
 from living_space import LivingSpace
