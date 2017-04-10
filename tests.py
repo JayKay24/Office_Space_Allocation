@@ -18,5 +18,9 @@ class PersonTest(unittest.TestCase):
     def testPersonHasStatus(self):
         self.assertEqual(self.guy.status, "Fellow")
 
+class RoomTest(unittest.TestCase):
+    def setUp(self):
+        self.room = room.Room()
+
 if __name__ == "__main__":
     unittest.main()
