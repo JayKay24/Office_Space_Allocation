@@ -26,11 +26,16 @@ def create_living_space(args):
     living_space = LivingSpace(args["<name>"])
     return living_space
 
-def create_person(name, status):
+def create_person(args):
     """
     Accepts arguments name, status to create a Person object.
     """
-    person = Person(name, status)
+    if args["<FELLOW|STAFF>"] == "FELLOW":
+        person = Fellow(args["<person_name>"], args["<FELLOW|STAFF>"])
+        if args["[wants_accommodation]"] == "Y":
+            person.opt_in = True
+    elif args["<FELLOW|STAFF>"] == "STAFF":
+        person = Staff(args["<person>"], args["<FELLOW|STAFF>"])
     return person
 
 def add_person(person):
