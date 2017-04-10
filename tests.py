@@ -8,6 +8,11 @@ import dojo
 import room
 import office
 
+from controller import create_office
+from controller import create_living_space
+from controller import create_person
+from controller import add_person
+
 class PersonTest(unittest.TestCase):
     def setUp(self):
         self.guy = person.Person("James", "Fellow")
