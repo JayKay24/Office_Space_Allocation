@@ -46,7 +46,10 @@ class MyInteractive (cmd.Cmd):
     @docopt_cmd
     def create_new_room(self, args):
         """Usage: create_room <room_type> <room_name>"""
-        print(create_office(args))
+        if args["<room_type>"] == "Office":
+            print(create_office(args))
+        elif args["<room_type>"] == "LivingSpace":
+            print(create_living_space(args))
 
     def add_new_person(self, args):
         """Usage: add_person <person_name> <FELLOW|STAFF> [wants_accomodation]"""
