@@ -92,5 +92,13 @@ class CreatePersonTests(unittest.TestCase):
         self.person = create_person(self.name, self.status)
         self.assertEqual(self.status, "Fellow")
 
+class AddPersonTests(unittest.TestCase):
+    def setUp(self):
+        person = create_person("James", "Fellow")
+
+    def testAddPersonReturnsList(self):
+        people = add_person(person)
+        self.assertEqual(isinstance(people, list), True)
+
 if __name__ == "__main__":
     unittest.main()
