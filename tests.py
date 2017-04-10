@@ -39,5 +39,12 @@ class OfficeTest(unittest.TestCase):
     def testOfficeHasMaxNum6(self):
         self.assertEqual(self.office.max_num, 6)
 
+class FellowTest(unittest.TestCase):
+    def setUp(self):
+        self.fellow = fellow.Fellow("James", "Fellow")
+
+    def testFellowHasOptIn(self):
+        self.assertEqual(self.fellow.opt_in, False)
+
 if __name__ == "__main__":
     unittest.main()
