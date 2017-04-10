@@ -45,10 +45,13 @@ class LivingSpaceTest(unittest.TestCase):
 
 class OfficeTest(unittest.TestCase):
     def setUp(self):
-        self.office = office.Office()
+        self.office = office.Office("Blue")
 
     def testOfficeHasMaxNum6(self):
         self.assertEqual(self.office.max_num, 6)
+
+    def testOfficeHasAttributeName(self):
+        self.assertEqual(self.office.name, "Blue")
 
 class FellowTest(unittest.TestCase):
     def setUp(self):
