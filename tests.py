@@ -15,5 +15,8 @@ class PersonTest(unittest.TestCase):
     def testPersonHasName(self):
         self.assertEqual(self.guy.name, "James")
 
+    def testPersonHasStatus(self):
+        self.assertEqual(self.guy.status, "Fellow")
+
 if __name__ == "__main__":
     unittest.main()
