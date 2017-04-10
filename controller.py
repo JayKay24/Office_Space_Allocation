@@ -18,3 +18,7 @@ def create_living_space(name):
 def create_person(name, status):
     person = Person(name, status)
     return person
+
+def add_person(person):
+    people.append(person)
+    return people
