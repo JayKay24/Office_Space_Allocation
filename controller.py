@@ -6,7 +6,7 @@ from person import Person
 from room import Room
 from staff import Staff
 
-def create_room(name):
-    room = Room(name)
+def create_Office(name):
+    room = Office(name)
     return room
 
