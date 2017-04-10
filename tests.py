@@ -25,5 +25,12 @@ class RoomTest(unittest.TestCase):
     def testRoomHasFilledAttribute(self):
         self.assertEqual(self.room.filled, False)
 
+class LivingSpaceTest(unittest.TestCase):
+    def setUp(self):
+        self.living_space = living_space.LivingSpace()
+
+    def testLivingSpaceHasMaxNum4(self):
+        self.assertEqual(self.living_space.max_num, 4)
+
 if __name__ == "__main__":
     unittest.main()
