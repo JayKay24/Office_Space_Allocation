@@ -6,8 +6,11 @@ from person import Person
 from room import Room
 from staff import Staff
 
-def create_Office(name):
+# Init.
+people = []
+def create_office(name):
     office = Office(name)
     return office
+
 
 
