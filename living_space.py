@@ -7,3 +7,4 @@ class LivingSpace(room.Room):
     def __init__(self, name, max_num=4):
         self.name = name
         self.max_num = max_num
+        
