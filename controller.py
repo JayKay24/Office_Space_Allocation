@@ -7,6 +7,7 @@ from room import Room
 from staff import Staff
 
 def create_Office(name):
-    room = Office(name)
-    return room
+    office = Office(name)
+    return office
+
 
