@@ -22,5 +22,8 @@ class RoomTest(unittest.TestCase):
     def setUp(self):
         self.room = room.Room()
 
+    def testRoomHasFilledAttribute(self):
+        self.assertEqual(self.room.filled, False)
+
 if __name__ == "__main__":
     unittest.main()
