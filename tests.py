@@ -9,9 +9,11 @@ import room
 import office
 
 class PersonTest(unittest.TestCase):
+    def setUp(self):
+        self.guy = person.Person("James", "Fellow")
+        
     def testPersonHasName(self):
-        guy = person.Person("James", "Fellow")
-        self.assertEqual(guy.name, "James")
+        self.assertEqual(self.guy.name, "James")
 
 if __name__ == "__main__":
     unittest.main()
