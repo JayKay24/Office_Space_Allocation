@@ -32,5 +32,12 @@ class LivingSpaceTest(unittest.TestCase):
     def testLivingSpaceHasMaxNum4(self):
         self.assertEqual(self.living_space.max_num, 4)
 
+class OfficeTest(unittest.TestCase):
+    def setUp(self):
+        self.office = office.Office()
+
+    def testOfficeHasMaxNum6(self):
+        self.assertEqual(self.office.max_num, 6)
+
 if __name__ == "__main__":
     unittest.main()
