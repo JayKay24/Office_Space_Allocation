@@ -1,0 +1,1 @@
+##This application is used to automatically allocate spaces to people at random.
