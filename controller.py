@@ -26,7 +26,7 @@ def create_living_space(args):
     Accepts argument name to create a LivingSpace object.
     """
     living_space = LivingSpace(args["<name>"])
-    return living_space
+    return living_space.name
 
 def create_person(args):
     """
