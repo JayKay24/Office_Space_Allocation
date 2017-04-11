@@ -2,7 +2,7 @@ class Person:
     """
     This class is used to instantiate Person objects.
     """
-    def __init__(self, name, status):
-        self.firstName = name[0]
-        self.lastName = name[1]
+    def __init__(self, fname, lname status):
+        self.firstName = fname
+        self.lastName = lname
         self.status = status
