@@ -46,7 +46,7 @@ def create_person(person_fname, person_lname, job_status):
 
     return person
 
-def view_persons_office(person):
+def display_persons_office(person):
     """
     Accepts a person object and displays their office name.
     """
