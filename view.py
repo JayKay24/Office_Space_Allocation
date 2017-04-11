@@ -2,10 +2,10 @@
 This example uses docopt with the built in cmd module to demonstrate an
 interactive command application.
 Usage:
-    view.py create_room <room_type> <room_name>
-    view.py add_person <person_name> <FELLOW|STAFF> [wants_accommodation]
-    view.py (-i | --interactive)
-    view.py (-h | --help)
+    view create_room <room_type> <room_name>
+    view add_person <person_name> <FELLOW|STAFF> [wants_accommodation]
+    view (-i | --interactive)
+    view (-h | --help)
 Options:
     -o, --output  Save to a txt file
     -i, --interactive  Interactive Mode
@@ -46,10 +46,10 @@ class MyInteractive (cmd.Cmd):
     file = None
     
     @docopt_cmd
-    def do_create_new_room(self, args):
+    def do_create_room(self, args):
         """Usage: create_room <room_type> <room_name>"""
         room_type = args['<room_type>']
-        office_name = args['<room_name>']
+        room_name = args['<room_name>']
 
         if room_type == "Office":
         	create_office(room_name)
@@ -58,7 +58,7 @@ class MyInteractive (cmd.Cmd):
 
 
     @docopt_cmd
-    def do_add_new_person(self, args):
+    def do_add_person(self, args):
         """Usage: add_person <person_name> <FELLOW|STAFF> [wants_accomodation]"""
         person_name = args['<person_name>']
         job_status = args['<FELLOW|STAFF>']
