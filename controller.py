@@ -34,7 +34,11 @@ def create_person(person_fname, person_lname, job_status):
     """
     Accepts arguments name, status to create a Person object.
     """
-    random_office = random.choice(offices)
+    while True:
+        random_office = random.choice(offices)
+        if random_office.spaces_left > 0:
+            random_office.allocate_space()
+            break
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
         person.assign_office_space(random_office.name)
