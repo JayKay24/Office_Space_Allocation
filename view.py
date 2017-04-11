@@ -19,6 +19,8 @@ from docopt import docopt, DocoptExit
 from controller import create_office
 from controller import create_living_space
 from controller import create_person
+from controller import display_persons_office
+from controller import display_offices
 from model import offices
 
 def docopt_cmd(func):
@@ -83,9 +85,9 @@ class MyInteractive (cmd.Cmd):
     @docopt_cmd
     def display_employee_office(self, args):
     	"""Usage: display_employee_office <fname> <lname>"""
-        first_name = args['<fname>']
-        last_name = args['<lname>']
-        display_persons_office(first_name, last_name)
+    	first_name = args['<fname>']
+    	last_name = args['<lname>']
+    	display_persons_office(first_name, last_name)
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
