@@ -9,7 +9,7 @@ from office import Office
 from person import Person
 from room import Room
 from staff import Staff
-from model import people, offices, living_spaces
+from model import people, offices, living_spaces, fellows, staffs
 
 def create_office(name):
     """
@@ -35,9 +35,10 @@ def create_person(person_fname, person_lname, job_status):
     """
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
+        fellows.append(person)
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
-
+        staffs.append(person)
     return person
 
 def add_person(person):
