@@ -17,6 +17,8 @@ def create_office(args):
     Accepts argument name to create an Office object.
     """
     office = Office(args["<room_name>"])
+    print("Office created successfully!")
+    print(Office.name)
     return office
 
 def create_living_space(args):

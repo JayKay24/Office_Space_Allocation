@@ -51,6 +51,7 @@ class MyInteractive (cmd.Cmd):
         elif args["<room_type>"] == "LivingSpace":
             print(create_living_space(args))
 
+    @docopt_cmd
     def add_new_person(self, args):
         """Usage: add_person <person_name> <FELLOW|STAFF> [wants_accomodation]"""
         print(add_person(args))
@@ -63,5 +64,3 @@ opt = docopt(__doc__, sys.argv[1:])
 if opt['--interactive']:
 
     MyInteractive().cmdloop()
-
-print(opt)
