@@ -12,21 +12,22 @@ from staff import Staff
 
 # Init.
 people = []
-def create_office(args):
+def create_office(name):
     """
     Accepts argument name to create an Office object.
     """
-    office = Office(args["<room_name>"])
+    office = Office(name)
     print("Office created successfully!")
     print(Office.name)
-    return office.name
+    return office
 
-def create_living_space(args):
+def create_living_space(name):
     """
     Accepts argument name to create a LivingSpace object.
     """
-    living_space = LivingSpace(args["<name>"])
-    return living_space.name
+    living_space = LivingSpace(name)
+    print(living_space.name)
+    return living_space
 
 def create_person(args):
     """

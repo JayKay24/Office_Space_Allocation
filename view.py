@@ -44,18 +44,17 @@ def docopt_cmd(func):
 class MyInteractive (cmd.Cmd):
     prompt = '(view) '
     file = None
+    
     @docopt_cmd
-    def create_new_room(self, args):
+    def do_create_new_room(self, args):
         """Usage: create_room <room_type> <room_name>"""
-        if args["<room_type>"] == "Office":
-            print(create_office(args))
-        elif args["<room_type>"] == "LivingSpace":
-            print(create_living_space(args))
+        if args
 
     @docopt_cmd
-    def add_new_person(self, args):
+    def do_add_new_person(self, args):
         """Usage: add_person <person_name> <FELLOW|STAFF> [wants_accomodation]"""
-        print(add_person(args))
+        print('Name: '+args['<person_name>'])
+        #print(add_person(args))
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
@@ -65,3 +64,4 @@ opt = docopt(__doc__, sys.argv[1:])
 if opt['--interactive']:
 
     MyInteractive().cmdloop()
+print(opt)
