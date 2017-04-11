@@ -11,7 +11,7 @@ from office import Office
 from person import Person
 from room import Room
 from staff import Staff
-from model import offices, living_spaces, fellows, staffs
+from model import offices, living_spaces, fellows, staffs, full_offices, full_living_spaces
 
 def create_office(name):
     """
@@ -30,7 +30,7 @@ def create_living_space(name):
     print("Living Space created successfully!")
     living_spaces.append(living_space)
 
-def create_person(person_fname, person_lname, job_status):
+def create_person(person_fname, person_lname, job_status, accom=""):
     """
     Accepts arguments name, status to create a Person object.
     """
@@ -39,9 +39,25 @@ def create_person(person_fname, person_lname, job_status):
         if random_office.spaces_left > 0:
             random_office.allocate_space()
             break
+        else:
+            index_rand_off = offices.index(random_office)
+            office = offices.pop(index_rand_off)
+            full_offices.append(office)
+            
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
         person.assign_office_space(random_office.name)
+        if accom.upper() == "Y":
+            while True:
+                random_living_space = random.choice(living_spaces)
+                if random_living_space.spaces_left > 0:
+                    random_living_space.allocate_space()
+                    break
+                else:
+                    index_rand_liv_space = living_spaces.index(random_living_space)
+                    living_space = living_spaces.pop(index_rand_liv_space)
+                    full_living_spaces.append(living_space)
+
         fellows.append(person)
 
     elif job_status.upper() == "STAFF":
