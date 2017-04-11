@@ -38,8 +38,7 @@ def create_person(person_fname, person_lname, job_status):
         person = Fellow(person_fname, person_lname, job_status)
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
-    print("Person created successfully")
-    print(person)
+
     return person
 
 def add_person(person):
