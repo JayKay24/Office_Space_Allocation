@@ -39,6 +39,7 @@ def create_person(person_fname, person_lname, job_status):
         person = Fellow(person_fname, person_lname, job_status)
         person.assign_office_space(random_office.name)
         fellows.append(person)
+
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
         person.assign_office_space(random_office.name)

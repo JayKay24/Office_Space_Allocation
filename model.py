@@ -7,4 +7,5 @@ fellows = []
 staffs = []
 offices = []
 living_spaces = []
-
+full_offices = []
+full_living_spaces = []

@@ -11,6 +11,9 @@ import office
 from controller import create_office
 from controller import create_living_space
 from controller import create_person
+from controller import create_office
+
+from model import fellows, staffs, offices, living_spaces
 
 class PersonTest(unittest.TestCase):
     def setUp(self):
@@ -101,12 +104,16 @@ class AddPersonTests(unittest.TestCase):
         self.assertEqual(isinstance(people, list), True)
 
 class AllocateRandomPeopleToRandomOffices(unittest.TestCase):
-    def setUp():
-        person1 = create_person("James", "Kinyua", "fellow")
-        person2 = create_person("Doris", "Njihia", "staff")
+    def setUp(self):
+        create_office("Flash")
+        create_office("Zoom")
+        create_person("James", "Kinyua", "fellow")
+        create_person("Doris", "Njihia", "fellow")
+
 
     def testPerson1OfficeNotEqualToPerson2Office(self):
-        self.assertNotEqual(person1.office_name, person2.office_name)
+        office_1 = fellows[0].office_name
+        office_2 = fellows[1].office_name
 
 if __name__ == "__main__":
     unittest.main()
