@@ -12,3 +12,6 @@ class Office(room.Room):
     @property
     def spaces_left(self):
     	return __spaces_left
+
+    def allocate_space(self):
+    	spaces_left -= 1
