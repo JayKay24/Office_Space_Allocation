@@ -46,11 +46,14 @@ def create_person(person_fname, person_lname, job_status):
 
     return person
 
-def display_persons_office(person):
+def display_persons_office(name):
     """
     Accepts a person object and displays their office name.
     """
-    print(person.office_name)
+    persons = fellows + staffs
+    for person in persons:
+        if name == person.firstName or name == lastName:
+            print(person.office_name)
 
 def display_offices(offices):
     """
