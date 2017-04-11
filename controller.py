@@ -9,7 +9,7 @@ from office import Office
 from person import Person
 from room import Room
 from staff import Staff
-from model import people, offices, living_spaces, fellows, staffs
+from model import offices, living_spaces, fellows, staffs
 
 def create_office(name):
     """
@@ -40,12 +40,3 @@ def create_person(person_fname, person_lname, job_status):
         person = Staff(person_fname, person_lname, job_status)
         staffs.append(person)
     return person
-
-def add_person(person):
-    """
-    Accepts an object to append to the people list.
-    """
-    people.append(person)
-    print("Person added successfully")
-    print(people)
-    return people
