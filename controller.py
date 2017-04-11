@@ -17,8 +17,6 @@ def create_office(name):
     """
     office = Office(name)
     print("Office created successfully!")
-    print(office.name)
-    print(office)
     offices.append(office)
 
 def create_living_space(name):
@@ -27,6 +25,7 @@ def create_living_space(name):
     """
     living_space = LivingSpace(name)
     print(living_space.name)
+    print("Living Space created successfully!")
     living_spaces.append(living_space)
 
 def create_person(person_fname, person_lname, job_status):
