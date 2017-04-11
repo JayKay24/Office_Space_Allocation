@@ -53,7 +53,7 @@ def display_persons_office(fname, lname):
     persons = fellows + staffs
     for person in persons:
         if fname == person.firstName and lname == person.lastName:
-            print(person.office_name)
+            print("\t" + person.firstName, person.lastName, person.office_name)
         else:
             print("No matching name in the database.")
 

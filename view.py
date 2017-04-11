@@ -4,7 +4,7 @@ interactive command application.
 Usage:
     view create_room <room_type> <room_name>
     view add_person <first_name> <last_name> <person_job> [<want_accommodation>]
-    view dispay_all_offices
+    view display_all_offices
     view display_employee_office <fname> <lname>
     view (-i | --interactive)
     view (-h | --help)
@@ -78,12 +78,12 @@ class MyInteractive (cmd.Cmd):
         print("Person successfully added to the database.")
 
     @docopt_cmd
-    def display_all_offices(self, args):
+    def do_display_all_offices(self, args):
     	"""Usage: display_all_offices"""
     	display_offices(offices)
 
     @docopt_cmd
-    def display_employee_office(self, args):
+    def do_display_employee_office(self, args):
     	"""Usage: display_employee_office <fname> <lname>"""
     	first_name = args['<fname>']
     	last_name = args['<lname>']
