@@ -9,6 +9,7 @@ from office import Office
 from person import Person
 from room import Room
 from staff import Staff
+from model import people, offices, living_spaces
 
 def create_office(name):
     """
