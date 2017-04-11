@@ -54,7 +54,7 @@ class MyInteractive (cmd.Cmd):
 
         if room_type == "Office":
         	create_office(room_name)
-        elif room_type == "Living_Space":
+        elif room_type == "Living":
         	create_living_space(room_name)
 
 
