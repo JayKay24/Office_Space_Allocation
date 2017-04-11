@@ -29,16 +29,16 @@ def create_living_space(name):
     print(living_space.name)
     return living_space
 
-def create_person(args):
+def create_person(person_name, job_status):
     """
     Accepts arguments name, status to create a Person object.
     """
-    if args["<FELLOW|STAFF>"] == "FELLOW":
-        person = Fellow(args["<person_name>"], args["<FELLOW|STAFF>"])
-        if args["[wants_accommodation]"] == "Y":
-            person.opt_in = True
-    elif args["<FELLOW|STAFF>"] == "STAFF":
-        person = Staff(args["<person>"], args["<FELLOW|STAFF>"])
+    if job_status == "FELLOW":
+        person = Fellow(person_name, job_status)
+    elif job_status == "STAFF":
+        person = Staff(person_name, job_status)
+    print("Person created successfully")
+    print(person)
     return person
 
 def add_person(person):

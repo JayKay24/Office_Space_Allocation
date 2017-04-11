@@ -48,13 +48,26 @@ class MyInteractive (cmd.Cmd):
     @docopt_cmd
     def do_create_new_room(self, args):
         """Usage: create_room <room_type> <room_name>"""
-        if args
+        room_type = args['<room_type>']
+        office_name = args['<room_name>']
+
+        if room_type == "Office":
+        	create_office(room_name)
+        elif room_type == "Living_Space":
+        	create_living_space(room_name)
+
 
     @docopt_cmd
     def do_add_new_person(self, args):
         """Usage: add_person <person_name> <FELLOW|STAFF> [wants_accomodation]"""
-        print('Name: '+args['<person_name>'])
-        #print(add_person(args))
+        person_name = args['<person_name>']
+        job_status = args['<FELLOW|STAFF>']
+        accom = args['<accommodation>']
+        person = create_person(person_name, job_status)
+        if accom == "Y":
+        	person.opt_in = True
+        add_person(person)
+        
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
