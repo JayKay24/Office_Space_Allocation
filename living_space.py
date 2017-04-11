@@ -11,7 +11,7 @@ class LivingSpace(room.Room):
 
     @property
     def spaces_left(self):
-    	return __spaces_left
+    	return self.__spaces_left
 
     def allocate_space(self):
         self.__spaces_left -= 1
