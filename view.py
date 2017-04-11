@@ -66,7 +66,7 @@ class MyInteractive (cmd.Cmd):
         person_fname = args['<first_name>']
         person_lname = args['<last_name>']
         accom = args['<want_accommodation>']
-        print(job_status, person_name)
+        print(job_status, person_fname, person_lname)
         person = create_person(person_fname, person_lname, job_status)
 
         if accom == "Y":

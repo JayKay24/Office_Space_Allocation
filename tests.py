@@ -15,10 +15,10 @@ from controller import add_person
 
 class PersonTest(unittest.TestCase):
     def setUp(self):
-        self.guy = person.Person("James", "Fellow")
+        self.guy = person.Person("James", "Kinyua", "Fellow")
         
     def testPersonHasName(self):
-        self.assertEqual(self.guy.name, "James")
+        self.assertEqual(self.guy.firstName, "James")
 
     def testPersonHasStatus(self):
         self.assertEqual(self.guy.status, "Fellow")
@@ -55,17 +55,17 @@ class OfficeTest(unittest.TestCase):
 
 class FellowTest(unittest.TestCase):
     def setUp(self):
-        self.fellow = fellow.Fellow("James", "Fellow")
+        self.fellow = fellow.Fellow("James", "Kinyua", "Fellow")
 
     def testFellowHasOptIn(self):
         self.assertEqual(self.fellow.opt_in, False)
 
 class StaffTest(unittest.TestCase):
     def setUp(self):
-        self.staff = staff.Staff("James", "Staff")
+        self.staff = staff.Staff("James", "Kinyua", "Staff")
 
-    def testStaffHasName(self):
-        self.assertEqual(self.staff.name, "James")
+    def testStaffHasFirstName(self):
+        self.assertEqual(self.staff.firstName, "James")
 
 class CreateOfficeTests(unittest.TestCase):
     def setUp(self):
@@ -85,16 +85,17 @@ class CreateLivingSpaceTests(unittest.TestCase):
 
 class CreatePersonTests(unittest.TestCase):
     def setUp(self):
-        self.name = "James"
+        self.fname = "James"
+        self.lname = "Kinyua"
         self.status = "Fellow"
 
     def testCreatePerson(self):
-        self.person = create_person(self.name, self.status)
+        self.person = create_person(self.fname, self.lname, self.status)
         self.assertEqual(self.status, "Fellow")
 
 class AddPersonTests(unittest.TestCase):
     def setUp(self):
-        person = create_person("James", "Fellow")
+        person = create_person("James", "Kinyua", "Fellow")
 
     def testAddPersonReturnsList(self):
         people = add_person(person)

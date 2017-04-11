@@ -30,14 +30,14 @@ def create_living_space(name):
     print(living_space.name)
     return living_space
 
-def create_person(person_name, job_status):
+def create_person(person_fname, person_lname, job_status):
     """
     Accepts arguments name, status to create a Person object.
     """
-    if job_status == "FELLOW":
-        person = Fellow(person_name, job_status)
-    elif job_status == "STAFF":
-        person = Staff(person_name, job_status)
+    if job_status.upper() == "FELLOW":
+        person = Fellow(person_fname, person_lname, job_status)
+    elif job_status.upper() == "STAFF":
+        person = Staff(person_fname, person_lname, job_status)
     print("Person created successfully")
     print(person)
     return person
