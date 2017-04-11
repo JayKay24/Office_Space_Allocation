@@ -16,7 +16,6 @@ import cmd
 from docopt import docopt, DocoptExit
 from controller import create_office
 from controller import create_living_space
-from controller import add_person
 from controller import create_person
 
 def docopt_cmd(func):
