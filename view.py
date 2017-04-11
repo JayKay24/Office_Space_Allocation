@@ -93,7 +93,7 @@ class MyInteractive (cmd.Cmd):
     @docopt_cmd
     def do_display_full_offices(self, args):
     	"""Usage: display_full_offices"""
-    	display_full_offices()
+    	display_full_offices(full_offices)
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""

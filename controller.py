@@ -43,7 +43,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
             index_rand_off = offices.index(random_office)
             office = offices.pop(index_rand_off)
             full_offices.append(office)
-            
+
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
         person.assign_office_space(random_office.name)
@@ -84,6 +84,11 @@ def display_offices(offices):
     """
     print("\tOffice Names\n")
     print("\t{:*^30s}\n".format("*"))
-    print("\tThese are the offices in the database:\n")
     for office in offices:
         print("\t{}".format(office.name))
+
+def display_full_offices(full_offices):
+    """
+    Accepts a list of full_offices objects and displays each office name.
+    """
+    display_offices(full_offices)
