@@ -12,6 +12,9 @@ from staff import Staff
 
 # Init.
 people = []
+offices = []
+living_spaces = []
+
 def create_office(name):
     """
     Accepts argument name to create an Office object.
