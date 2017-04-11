@@ -4,6 +4,8 @@ interactive command application.
 Usage:
     view create_room <room_type> <room_name>
     view add_person <first_name> <last_name> <person_job> [<want_accommodation>]
+    view dispay_all_offices
+    view display_employee_office <fname> <lname>
     view (-i | --interactive)
     view (-h | --help)
 Options:
@@ -17,6 +19,7 @@ from docopt import docopt, DocoptExit
 from controller import create_office
 from controller import create_living_space
 from controller import create_person
+from model import offices
 
 def docopt_cmd(func):
     """
@@ -71,7 +74,18 @@ class MyInteractive (cmd.Cmd):
         if accom == "Y":
          	person.opt_in = True
         print("Person successfully added to the database.")
-        
+
+    @docopt_cmd
+    def display_all_offices(self, args):
+    	"""Usage: display_all_offices"""
+    	display_offices(offices)
+
+    @docopt_cmd
+    def display_employee_office(self, args):
+    	"""Usage: display_employee_office <fname> <lname>"""
+        first_name = args['<fname>']
+        last_name = args['<lname>']
+        display_persons_office(first_name, last_name)
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""

@@ -46,14 +46,16 @@ def create_person(person_fname, person_lname, job_status):
 
     return person
 
-def display_persons_office(name):
+def display_persons_office(fname, lname):
     """
     Accepts a person object and displays their office name.
     """
     persons = fellows + staffs
     for person in persons:
-        if name == person.firstName or name == lastName:
+        if fname == person.firstName and lname == person.lastName:
             print(person.office_name)
+        else:
+            print("No matching name in the database.")
 
 def display_offices(offices):
     """
