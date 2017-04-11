@@ -51,3 +51,13 @@ def view_persons_office(person):
     Accepts a person object and displays their office name.
     """
     print(person.office_name)
+
+def display_offices(offices):
+    """
+    Accepts a list of offices objects and displays each office name.
+    """
+    print("\tOffice Names\n")
+    print("\t{:*^30s}\n".format("*"))
+    print("\tThese are the offices in the database:\n")
+    for office in offices:
+        print("\t{}".format(office.name))
