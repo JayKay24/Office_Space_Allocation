@@ -2,6 +2,8 @@
 This module imports all the necessary classes to implement the controller aspect
 of the MVC framework.
 """
+import random
+
 from dojo import Dojo
 from fellow import Fellow
 from living_space import LivingSpace
@@ -32,10 +34,14 @@ def create_person(person_fname, person_lname, job_status):
     """
     Accepts arguments name, status to create a Person object.
     """
+    random_office = random.choice(offices)
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
+        person.assign_office_space(random_office.name)
         fellows.append(person)
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
+        person.assign_office_space(random_office.name)
         staffs.append(person)
+
     return person
