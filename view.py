@@ -5,6 +5,7 @@ Usage:
     view create_room <room_type> <room_name>
     view add_person <first_name> <last_name> <person_job> [<want_accommodation>]
     view display_all_offices
+    view display_full_offices
     view display_employee_office <fname> <lname>
     view (-i | --interactive)
     view (-h | --help)
@@ -21,7 +22,7 @@ from controller import create_living_space
 from controller import create_person
 from controller import display_persons_office
 from controller import display_offices
-from model import offices
+from model import offices, full_offices, full_living_spaces
 
 def docopt_cmd(func):
     """
@@ -88,6 +89,11 @@ class MyInteractive (cmd.Cmd):
     	first_name = args['<fname>']
     	last_name = args['<lname>']
     	display_persons_office(first_name, last_name)
+
+    @docopt_cmd
+    def do_display_full_offices(self, args):
+    	"""Usage: display_full_offices"""
+    	display_full_offices()
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
