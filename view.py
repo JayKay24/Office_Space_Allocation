@@ -71,7 +71,7 @@ class MyInteractive (cmd.Cmd):
 
         if accom == "Y":
          	person.opt_in = True
-        add_person(person)
+        print("Person successfully added to the database.")
         
         
     def do_quit(self, args):
