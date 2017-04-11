@@ -18,7 +18,8 @@ def create_office(name):
     """
     office = Office(name)
     print("Office created successfully!")
-    print(Office.name)
+    print(office.name)
+    print(office)
     return office
 
 def create_living_space(name):
