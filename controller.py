@@ -19,7 +19,7 @@ def create_office(args):
     office = Office(args["<room_name>"])
     print("Office created successfully!")
     print(Office.name)
-    return office
+    return office.name
 
 def create_living_space(args):
     """
