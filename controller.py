@@ -78,17 +78,30 @@ def display_persons_office(fname, lname):
         else:
             print("No matching name in the database.")
 
+def display_object_types(objects_list):
+    """
+    Accepts a list of objects_list objects and displays each object_list name.
+    """
+    for object_type in objects_list:
+        print("\t{:*^30s}\n".format(object_type.name))
+
 def display_offices(offices):
     """
     Accepts a list of offices objects and displays each office name.
     """
     print("\tOffice Names\n")
-    print("\t{:*^30s}\n".format("*"))
-    for office in offices:
-        print("\t{}".format(office.name))
+    display_object_types(offices)
 
 def display_full_offices(full_offices):
     """
     Accepts a list of full_offices objects and displays each office name.
     """
-    display_offices(full_offices)
+    print("Full Offices")
+    display_object_types(full_offices)
+
+def display_full_living_spaces(full_living_spaces):
+    """
+    Accepts a list of full_living_spaces objects and displays each living_space_name.
+    """
+    print("\tFull Living Spaces")
+    display_object_types(full_living_spaces)
