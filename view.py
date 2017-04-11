@@ -52,9 +52,9 @@ class MyInteractive (cmd.Cmd):
         room_type = args['<room_type>']
         room_name = args['<room_name>']
 
-        if room_type == "Office":
+        if room_type.upper() == "OFFICE":
         	create_office(room_name)
-        elif room_type == "Living":
+        elif room_type.upper() == "LIVING":
         	create_living_space(room_name)
 
 
