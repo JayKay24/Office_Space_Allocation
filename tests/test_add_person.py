@@ -1,4 +1,4 @@
-from ..Office_Space_Allocation.controller import create_person 
+from controller import create_person 
 
 import unittest
 class AddPersonTests(unittest.TestCase):

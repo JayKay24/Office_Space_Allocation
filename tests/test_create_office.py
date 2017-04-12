@@ -1,5 +1,7 @@
 import unittest
 
+from ..Room.office import office
+
 class CreateOfficeTests(unittest.TestCase):
     def setUp(self):
         self.name = "Blue"
