@@ -52,7 +52,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 random_living_space = random.choice(living_spaces)
                 if random_living_space.spaces_left > 0:
                     person.assign_living_space(random_living_space.name)
-                    print(person.firstName, "has been allocated the living space", person.living_space_name)
+                    print(person.firstName+ " has been allocated the living space "+ person.living_space_name)
                     random_living_space.allocate_space()
                     break
                 else:
@@ -131,7 +131,7 @@ def display_room(name):
     for person in people:
         if person.office_name == name:
             print("\t" + person.firstName, person.lastName)
-        elif person is Fellow:
+        elif person.status.upper() == "FELLOW":
             if person.living_space_name == name:
                 print("\t" + person.firstName, person.lastName)
 
