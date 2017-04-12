@@ -25,6 +25,7 @@ from controller import create_person
 from controller import display_persons_office
 from controller import display_offices
 from controller import display_room
+from controller import display_allocations
 from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
@@ -32,7 +33,7 @@ def docopt_cmd(func):
     This decorator is used to simplify the try/except block and pass the result
     of the docopt parsing to the called action.
     """
-    def fn(self, arg)
+    def fn(self, arg):
         try:
             opt = docopt(fn.__doc__, arg)
         except DocoptExit as e:
