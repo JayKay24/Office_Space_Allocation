@@ -4,13 +4,13 @@ of the MVC framework.
 """
 import random
 
-from dojo import Dojo
-from fellow import Fellow
-from living_space import LivingSpace
-from office import Office
-from person import Person
-from room import Room
-from staff import Staff
+from classes.dojo import Dojo
+from classes.room import Room
+from classes.office import Office
+from classes.person import Person
+from classes.fellow import Fellow
+from classes.living_space import LivingSpace
+from classes.staff import Staff
 from model import offices, living_spaces, fellows, staffs, full_offices, full_living_spaces
 
 def create_office(name):
@@ -47,11 +47,12 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 index_rand_off = offices.index(random_office)
                 office = offices.pop(index_rand_off)
                 full_offices.append(office)
-        if accom.upper() == "Y":
+        if accom.upper() == "Y" and person is Fellow():
             while True:
                 random_living_space = random.choice(living_spaces)
                 if random_living_space.spaces_left > 0:
                     person.assign_living_space(random_living_space.name)
+                    print(person.firstName, "has been allocated the living space", person.living_space_name)
                     random_living_space.allocate_space()
                     break
                 else:
@@ -75,7 +76,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 full_offices.append(office)
 
         staffs.append(person)
-    print(person.status.upper(), "has been successfully added.")
+    print(person.firstName, "has been successfully added.")
     print(person.firstName, "has been allocated the office", person.office_name)
 
     return person
