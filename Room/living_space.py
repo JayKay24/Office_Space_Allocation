@@ -1,13 +1,13 @@
-#from room import Room
+import room
 
-class Office(Room):
+class LivingSpace(room.Room):
     """
-    This class is used to initialize Office objects.
+    This class is used to initialize LivingSpace objects.
     """
-    def __init__(self, name, max_num=6):
+    def __init__(self, name, max_num=4):
         super().__init__(name)
         self.max_num = max_num
-        self.__spaces_left = 6
+        self.__spaces_left = 4
 
     @property
     def spaces_left(self):
@@ -18,4 +18,4 @@ class Office(Room):
     	self.__spaces_left = value
 
     def allocate_space(self):
-    	self.spaces_left -= 1
+        self.__spaces_left -= 1
