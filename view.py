@@ -103,6 +103,7 @@ class MyInteractive (cmd.Cmd):
     	"""Usage: print_room <room_name>"""
     	name = args['<room_name>']
     	display_room(name)
+
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
