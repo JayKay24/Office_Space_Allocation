@@ -1,6 +1,6 @@
-from Person.person import Person
+import person
 
-class Fellow(Person):
+class Fellow(person.Person):
     """
     This class is used to initialize Fellow objects.
     """

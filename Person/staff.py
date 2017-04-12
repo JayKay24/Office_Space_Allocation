@@ -1,6 +1,6 @@
-import person
+from Person.person import Person
 
-class Staff(person.Person):
+class Staff(Person):
     """
     This class initializes Staff objects.
     """

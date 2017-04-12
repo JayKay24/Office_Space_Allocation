@@ -5,12 +5,12 @@ of the MVC framework.
 import random
 
 from dojo import Dojo
-from room import Room
-from office import Office
-from person import Person
-from fellow import Fellow
-from living_space import LivingSpace
-from staff import Staff
+from Room.room import Room
+from Room.office import Office
+from Person.person import Person
+from Person.fellow import Fellow
+from Room.living_space import LivingSpace
+from Person.staff import Staff
 from model import offices, living_spaces, fellows, staffs, full_offices, full_living_spaces
 
 def create_office(name):

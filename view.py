@@ -100,7 +100,7 @@ class MyInteractive (cmd.Cmd):
 
     @docopt_cmd
     def do_print_room(self, args):
-    	"""Usage print_room <room_name>"""
+    	"""Usage: print_room <room_name>"""
     	name = args['<room_name>']
     	display_room(name)
         

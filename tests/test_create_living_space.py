@@ -9,4 +9,4 @@ class CreateLivingSpaceTests(unittest.TestCase):
         self.assertEqual(self.living_space.name, "Red")
 
 if __name__ == "__main__":
-	main()
+	unittest.main()
