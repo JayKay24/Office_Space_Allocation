@@ -109,7 +109,10 @@ class MyInteractive (cmd.Cmd):
     def do_print_allocations(self, args):
         """Usage: print_allocations [<filename>]"""
         people = fellows + staffs
-        display_allocations(people)
+        if args['<filename>']:
+            display_allocations(people, args['<filename>'])
+        else:
+            display_allocations(people)
 
         
     def do_quit(self, args):
