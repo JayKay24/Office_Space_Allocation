@@ -62,7 +62,17 @@ def create_person(person_fname, person_lname, job_status, accom=""):
 
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
-        person.assign_office_space(random_office.name)
+        while True:
+            random_office = random.choice(offices)
+            if random_office.spaces_left > 0:
+                person.assign_office_space(random_office.name)
+                random_office.allocate_space()
+                break
+            else:
+                index_rand_off = offices.index(random_offices)
+                office = offices.pop(index_rand_off)
+                full_offices.append(office)
+                
         staffs.append(person)
 
     return person
