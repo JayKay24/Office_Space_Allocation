@@ -81,6 +81,51 @@ def create_person(person_fname, person_lname, job_status, accom=""):
 
     return person
 
+def allocate_office_space(person):
+    """
+    Accepts the argument of person object and allocates a random office space.
+    """
+    while True:
+        random_office = random.choice(offices)
+        if random_office.spaces_left > 0:
+            person.assign_office_space(random_office.name)
+            random_office.allocate_space()
+            break
+        else:
+            random_office_index = offices.index(random_office)
+            office = offices.pop(random_office_index)
+            full_offices.append(office)
+
+def allocate_living_space(person):
+    """
+    Accepts the argument of person object and allocates a random living space.
+    """
+    while True:
+        random_living_space = random.choice(living_spaces)
+        if random_living_space.spaces_left > 0:
+            person.assign_living_space(random_living_space.name)
+            random_living_space.allocate_space()
+            break
+        else:
+            random_living_space_index = living_spaces.index(random_living_space)
+            living_space = living_spaces.pop(random_living_space)
+            full_living_spaces.append(living_space)
+
+
+def create_person(fname, lname, job_status, accom=""):
+    """
+    Accepts four arguments to create a person object.
+    """
+    if job_status.upper() == "FELLOW":
+        person = Fellow(fname, lname, job_status)
+        if accom:
+            allocate_living_space(person)
+    elif job_status.upper() == "STAFF":
+        person = Staff(fname, lname, job_status)
+    
+    allocate_office_space(person)
+    return person
+
 def display_persons_office(fname, lname):
     """
     Accepts a person object and displays their office name.
