@@ -116,3 +116,18 @@ def display_full_living_spaces(full_living_spaces):
     """
     print("\tFull Living Spaces")
     display_object_types(full_living_spaces)
+
+def display_room(name):
+    """
+    Accepts a name argument and loops through objects to determine if attributes 
+    match name.
+    """
+    print("\t" + name)
+    people = staffs + fellows
+
+    for person in people:
+        if person.office_name == name:
+            print("\t" + person.firstName, person.lastName)
+        elif person is Fellow:
+            if person.living_space_name == name:
+                print("\t" + person.firstName, person.lastName)

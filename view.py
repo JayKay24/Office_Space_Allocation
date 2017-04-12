@@ -23,6 +23,7 @@ from controller import create_living_space
 from controller import create_person
 from controller import display_persons_office
 from controller import display_offices
+from controller import display_room
 from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
@@ -105,14 +106,7 @@ class MyInteractive (cmd.Cmd):
     def do_print_room(self, args):
     	"""Usage print_room <room_name>"""
     	name = args['<room_name>']
-    	print("\t" + name)
-    	for staff_member in staffs:
-    		if name == staff_member.office_name:
-    			print("\t" + staff_member.firstName, staff_member.lastName)
-    	for fellow in fellows:
-    		if name == fellow.office_name or name == fellow.living_space_name:
-    			print("\t" + fellow.firstName, fellow.lastName)
-
+    	display_room(name)
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
