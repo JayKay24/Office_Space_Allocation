@@ -29,28 +29,29 @@ def create_living_space(name):
     print(living_space.name)
     print("Living Space created successfully!")
     living_spaces.append(living_space)
+    return living_space
 
 def create_person(person_fname, person_lname, job_status, accom=""):
     """
     Accepts arguments name, status to create a Person object.
     """
-    while True:
-        random_office = random.choice(offices)
-        if random_office.spaces_left > 0:
-            random_office.allocate_space()
-            break
-        else:
-            index_rand_off = offices.index(random_office)
-            office = offices.pop(index_rand_off)
-            full_offices.append(office)
-
     if job_status.upper() == "FELLOW":
         person = Fellow(person_fname, person_lname, job_status)
-        person.assign_office_space(random_office.name)
+        while True:
+            random_office = random.choice(offices)
+            if random_office.spaces_left > 0:
+                person.assign_office_space(random_office.name)
+                random_office.allocate_space()
+                break
+            else:
+                index_rand_off = offices.index(random_office)
+                office = offices.pop(index_rand_off)
+                full_offices.append(office)
         if accom.upper() == "Y":
             while True:
                 random_living_space = random.choice(living_spaces)
                 if random_living_space.spaces_left > 0:
+                    person.assign_living_space(random_living_space.name)
                     random_living_space.allocate_space()
                     break
                 else:
@@ -62,7 +63,17 @@ def create_person(person_fname, person_lname, job_status, accom=""):
 
     elif job_status.upper() == "STAFF":
         person = Staff(person_fname, person_lname, job_status)
-        person.assign_office_space(random_office.name)
+        while True:
+            random_office = random.choice(offices)
+            if random_office.spaces_left > 0:
+                person.assign_office_space(random_office.name)
+                random_office.allocate_space()
+                break
+            else:
+                index_rand_off = offices.index(random_offices)
+                office = offices.pop(index_rand_off)
+                full_offices.append(office)
+
         staffs.append(person)
 
     return person
@@ -105,3 +116,18 @@ def display_full_living_spaces(full_living_spaces):
     """
     print("\tFull Living Spaces")
     display_object_types(full_living_spaces)
+
+def display_room(name):
+    """
+    Accepts a name argument and loops through objects to determine if attributes 
+    match name.
+    """
+    print("\t" + name)
+    people = staffs + fellows
+
+    for person in people:
+        if person.office_name == name:
+            print("\t" + person.firstName, person.lastName)
+        elif person is Fellow:
+            if person.living_space_name == name:
+                print("\t" + person.firstName, person.lastName)
