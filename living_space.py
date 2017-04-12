@@ -13,5 +13,9 @@ class LivingSpace(room.Room):
     def spaces_left(self):
     	return self.__spaces_left
 
+    @spaces_left.setter
+    def spaces_left(self, value):
+    	self.__spaces_left = value
+
     def allocate_space(self):
         self.__spaces_left -= 1
