@@ -47,7 +47,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 index_rand_off = offices.index(random_office)
                 office = offices.pop(index_rand_off)
                 full_offices.append(office)
-        if accom.upper() == "Y" and person is Fellow():
+        if accom.upper() == "Y":
             while True:
                 random_living_space = random.choice(living_spaces)
                 if random_living_space.spaces_left > 0:
@@ -150,3 +150,14 @@ def display_allocations(people, filename=""):
             if person.status.upper() == "FELLOW":
                 print(person.firstName + " " + person.lastName + " " + person.living_space_name)
             print(person.firstName + " " + person.lastName + " " + person.office_name)
+
+def display_prog_greeting():
+    """
+    Prints the program greeting to the user.
+    """
+    title = " Office Space Allocation System "
+    print("\n{:*^80}\n".format(title.title()))
+    print("\tThis program randomly allocates Offices and Living SPaces to")
+    print("\t Andela Fellows and Staff. ")
+    print("\n{:*^80s}\n")
+    print()

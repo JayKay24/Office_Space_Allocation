@@ -5,6 +5,7 @@ Usage:
     view create_room <room_type> <room_name>...
     view add_person <fname> <lname> <person_job> [<want_accommodation>]
     view display_all_offices
+    view display_program_greeting
     view print_room <room_name>
     view print_allocations [<filename>]
     view display_full_offices
@@ -26,6 +27,7 @@ from controller import display_persons_office
 from controller import display_offices
 from controller import display_room
 from controller import display_allocations
+from controller import display_prog_greeting
 from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
@@ -114,6 +116,11 @@ class MyInteractive (cmd.Cmd):
             display_allocations(people, args['<filename>'])
         else:
             display_allocations(people)
+
+    @docopt_cmd
+    def do_display_greeting(self, args):
+        """Usage: display_program_greeting"""
+        display_prog_greeting()
 
         
     def do_quit(self, args):
