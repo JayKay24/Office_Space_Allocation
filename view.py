@@ -22,7 +22,7 @@ from controller import create_living_space
 from controller import create_person
 from controller import display_persons_office
 from controller import display_offices
-from model import offices, full_offices, full_living_spaces
+from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
     """

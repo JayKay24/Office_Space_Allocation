@@ -1,23 +1,23 @@
 import unittest
 
-import .person
-import .fellow
-import .living_space
-import .staff
-import .dojo
-import .room
-import .office
+from ..person import Person
+from ..fellow import Fellow
+from ..living_space import Livingspace
+from ..staff import Staff
+from ..dojo import Dojo
+from ..room import Dojo
+from ..office import Office
 
-from .controller import create_office
-from .controller import create_living_space
-from .controller import create_person
-from .controller import create_office
+from ..controller import create_office
+from ..controller import create_living_space
+from ..controller import create_person
+from ..controller import create_office
 
 from .model import fellows, staffs, offices, living_spaces
 
 class PersonTest(unittest.TestCase):
     def setUp(self):
-        self.guy = person.Person("James", "Kinyua", "Fellow")
+        self.guy = Person("James", "Kinyua", "Fellow")
         
     def testPersonHasName(self):
         self.assertEqual(self.guy.firstName, "James")
@@ -27,7 +27,7 @@ class PersonTest(unittest.TestCase):
 
 class RoomTest(unittest.TestCase):
     def setUp(self):
-        self.room = room.Room("Orange")
+        self.room = Room("Orange")
 
     def testRoomHasFilledAttribute(self):
         self.assertEqual(self.room.filled, False)
@@ -37,7 +37,7 @@ class RoomTest(unittest.TestCase):
 
 class LivingSpaceTest(unittest.TestCase):
     def setUp(self):
-        self.living_space = living_space.LivingSpace("Black")
+        self.living_space = LivingSpace("Black")
 
     def testLivingSpaceHasMaxNum4(self):
         self.assertEqual(self.living_space.max_num, 4)
@@ -47,7 +47,7 @@ class LivingSpaceTest(unittest.TestCase):
 
 class OfficeTest(unittest.TestCase):
     def setUp(self):
-        self.office = office.Office("Blue")
+        self.office = Office("Blue")
 
     def testOfficeHasMaxNum6(self):
         self.assertEqual(self.office.max_num, 6)
@@ -57,14 +57,14 @@ class OfficeTest(unittest.TestCase):
 
 class FellowTest(unittest.TestCase):
     def setUp(self):
-        self.fellow = fellow.Fellow("James", "Kinyua", "Fellow")
+        self.fellow = Fellow("James", "Kinyua", "Fellow")
 
     def testFellowHasOptIn(self):
         self.assertEqual(self.fellow.opt_in, False)
 
 class StaffTest(unittest.TestCase):
     def setUp(self):
-        self.staff = staff.Staff("James", "Kinyua", "Staff")
+        self.staff = Staff("James", "Kinyua", "Staff")
 
     def testStaffHasFirstName(self):
         self.assertEqual(self.staff.firstName, "James")
