@@ -2,7 +2,7 @@
 This example uses docopt with the built in cmd module to demonstrate an
 interactive command application.
 Usage:
-    view create_room <room_type> <room_name>
+    view create_room <room_type> <room_name>...
     view add_person <first_name> <last_name> <person_job> [<want_accommodation>]
     view display_all_offices
     view print_room <room_name>
@@ -56,14 +56,15 @@ class MyInteractive (cmd.Cmd):
     
     @docopt_cmd
     def do_create_room(self, args):
-        """Usage: create_room <room_type> <room_name>"""
+        """Usage: create_room <room_type> <room_name>..."""
         room_type = args['<room_type>']
         room_name = args['<room_name>']
 
-        if room_type.upper() == "OFFICE":
-        	create_office(room_name)
-        elif room_type.upper() == "LIVING":
-        	create_living_space(room_name)
+        for item in room_name:
+        	if room_type.upper() == "OFFICE":
+        		create_office(room_name)
+        	elif room_type.upper() == "LIVING":
+        		create_living_space(room_name)
 
 
     @docopt_cmd

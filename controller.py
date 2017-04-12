@@ -18,7 +18,7 @@ def create_office(name):
     Accepts argument name to create an Office object.
     """
     office = Office(name)
-    print("Office created successfully!")
+    print("An office called", name, "has been successfully created!")
     offices.append(office)
 
 def create_living_space(name):
@@ -75,6 +75,8 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 full_offices.append(office)
 
         staffs.append(person)
+    print(person.status.upper(), "has been successfully added.")
+    print(person.firstName, "has been allocated the office", person.office_name)
 
     return person
 
