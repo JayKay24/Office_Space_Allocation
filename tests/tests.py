@@ -1,19 +1,19 @@
 import unittest
 
-import person
-import fellow
-import living_space
-import staff
-import dojo
-import room
-import office
+import .person
+import .fellow
+import .living_space
+import .staff
+import .dojo
+import .room
+import .office
 
-from controller import create_office
-from controller import create_living_space
-from controller import create_person
-from controller import create_office
+from .controller import create_office
+from .controller import create_living_space
+from .controller import create_person
+from .controller import create_office
 
-from model import fellows, staffs, offices, living_spaces
+from .model import fellows, staffs, offices, living_spaces
 
 class PersonTest(unittest.TestCase):
     def setUp(self):
