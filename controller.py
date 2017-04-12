@@ -142,11 +142,11 @@ def display_allocations(people, filename=""):
     if filename:
         with open(filename, 'w') as file_obj:
             for person in people:
-                if person.job_status.upper() == "FELLOW":
+                if person.status.upper() == "FELLOW":
                     file_obj.write(person.firstName + " " + person.lastName + " " + person.living_space_name + "\n")
                 file_obj.write(person.firstName + " " + person.lastName + " " + person.office_name + "\n")
     else:
         for person in people:
-            if person.job_status.upper() == "FELLOW":
+            if person.status.upper() == "FELLOW":
                 print(person.firstName + " " + person.lastName + " " + person.living_space_name)
             print(person.firstName + " " + person.lastName + " " + person.office_name)
