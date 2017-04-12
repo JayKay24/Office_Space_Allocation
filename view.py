@@ -6,6 +6,7 @@ Usage:
     view add_person <fname> <lname> <person_job> [<want_accommodation>]
     view display_all_offices
     view print_room <room_name>
+    view print_allocations [<filename>]
     view display_full_offices
     view display_employee_office <fname> <lname>
     view (-i | --interactive)
@@ -31,7 +32,7 @@ def docopt_cmd(func):
     This decorator is used to simplify the try/except block and pass the result
     of the docopt parsing to the called action.
     """
-    def fn(self, arg):
+    def fn(self, arg)
         try:
             opt = docopt(fn.__doc__, arg)
         except DocoptExit as e:
@@ -103,6 +104,12 @@ class MyInteractive (cmd.Cmd):
     	"""Usage: print_room <room_name>"""
     	name = args['<room_name>']
     	display_room(name)
+
+    @docopt_cmd
+    def do_print_allocations(self, args):
+        """Usage: print_allocations [<filename>]"""
+        people = fellows + staffs
+        display_allocations(people)
 
         
     def do_quit(self, args):
