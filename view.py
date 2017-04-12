@@ -2,10 +2,11 @@
 This example uses docopt with the built in cmd module to demonstrate an
 interactive command application.
 Usage:
-    view create_room <room_type> <room_name>
-    view add_person <first_name> <last_name> <person_job> [<want_accommodation>]
+    view create_room <room_type> <room_name>...
+    view add_person <fname> <lname> <person_job> [<want_accommodation>]
     view display_all_offices
     view print_room <room_name>
+    view print_allocations [<filename>]
     view display_full_offices
     view display_employee_office <fname> <lname>
     view (-i | --interactive)
@@ -24,6 +25,7 @@ from controller import create_person
 from controller import display_persons_office
 from controller import display_offices
 from controller import display_room
+from controller import display_allocations
 from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
@@ -56,29 +58,25 @@ class MyInteractive (cmd.Cmd):
     
     @docopt_cmd
     def do_create_room(self, args):
-        """Usage: create_room <room_type> <room_name>"""
+        """Usage: create_room <room_type> <room_name>..."""
         room_type = args['<room_type>']
         room_name = args['<room_name>']
 
-        if room_type.upper() == "OFFICE":
-        	create_office(room_name)
-        elif room_type.upper() == "LIVING":
-        	create_living_space(room_name)
+        for item in room_name:
+        	if room_type.upper() == "OFFICE":
+        		create_office(item)
+        	elif room_type.upper() == "LIVING":
+        		create_living_space(item)
 
 
     @docopt_cmd
     def do_add_person(self, args):
-        """Usage: add_person <first_name> <last_name> <person_job> [<want_accommodation>]"""
+        """Usage: add_person <fname> <lname> <person_job> [<want_accommodation>]"""
         job_status = args['<person_job>']
-        person_fname = args['<first_name>']
-        person_lname = args['<last_name>']
+        person_fname = args['<fname>']
+        person_lname = args['<lname>']
         accom = args['<want_accommodation>']
-        print(job_status, person_fname, person_lname)
         person = create_person(person_fname, person_lname, job_status)
-
-        if accom == "Y":
-         	person.opt_in = True
-        print("Person successfully added to the database.")
 
     @docopt_cmd
     def do_display_all_offices(self, args):
@@ -104,9 +102,19 @@ class MyInteractive (cmd.Cmd):
 
     @docopt_cmd
     def do_print_room(self, args):
-    	"""Usage print_room <room_name>"""
+    	"""Usage: print_room <room_name>"""
     	name = args['<room_name>']
     	display_room(name)
+
+    @docopt_cmd
+    def do_print_allocations(self, args):
+        """Usage: print_allocations [<filename>]"""
+        people = fellows + staffs
+        if args['<filename>']:
+            display_allocations(people, args['<filename>'])
+        else:
+            display_allocations(people)
+
         
     def do_quit(self, args):
         """Quits out of Interactive Mode."""

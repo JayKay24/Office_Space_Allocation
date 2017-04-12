@@ -1,6 +1,6 @@
-import room
+from Room.room import Room
 
-class LivingSpace(room.Room):
+class LivingSpace(Room):
     """
     This class is used to initialize LivingSpace objects.
     """

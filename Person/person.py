@@ -1,4 +1,3 @@
-import office
 class Person:
     """
     This class is used to instantiate Person objects.

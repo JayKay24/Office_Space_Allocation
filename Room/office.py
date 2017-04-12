@@ -1,6 +1,6 @@
-import room
+from Room.room import Room
 
-class Office(room.Room):
+class Office(Room):
     """
     This class is used to initialize Office objects.
     """
