@@ -51,6 +51,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
             while True:
                 random_living_space = random.choice(living_spaces)
                 if random_living_space.spaces_left > 0:
+                    person.assign_living_space(random_living_space.name)
                     random_living_space.allocate_space()
                     break
                 else:
@@ -72,7 +73,7 @@ def create_person(person_fname, person_lname, job_status, accom=""):
                 index_rand_off = offices.index(random_offices)
                 office = offices.pop(index_rand_off)
                 full_offices.append(office)
-                
+
         staffs.append(person)
 
     return person
