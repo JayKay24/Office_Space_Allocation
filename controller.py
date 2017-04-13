@@ -37,7 +37,7 @@ def create_person(fname, lname, job_status, accom=""):
     """
     if job_status.upper() == "FELLOW":
         person = Fellow(fname, lname, job_status)
-        if accom:
+        if accom.upper() == "Y":
             allocate_living_space(person)
         fellows.append(person)
     elif job_status.upper() == "STAFF":
