@@ -44,7 +44,6 @@ def create_person(fname, lname, job_status, accom=""):
         person = Staff(fname, lname, job_status)
         staffs.append(person)
     
-    allocate_office_space(person)
     return person
 
 def allocate_office_space(person):
