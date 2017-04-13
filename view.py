@@ -3,7 +3,7 @@ This example uses docopt with the built in cmd module to demonstrate an
 interactive command application.
 Usage:
     view create_room <room_type> <room_name>...
-    view add_person <fname> <lname> <person_job> --accom=<accom>...
+    view add_person <fname> <lname> <person_job> [<accom>]
     view display_all_offices
     view display_greeting
     view print_room <room_name>
@@ -79,12 +79,12 @@ class MyInteractive (cmd.Cmd):
 
     @docopt_cmd
     def do_add_person(self, args):
-        """Usage: add_person <fname> <lname> <person_job> --accom=<accom>..."""
+        """Usage: add_person <fname> <lname> <person_job> [<accom>]"""
 
         job_status = args['<person_job>']
         person_fname = args['<fname>']
         person_lname = args['<lname>']
-        accom = args['--accom']
+        accom = args['<accom>']
         # Create a person object
         person = create_person(person_fname, person_lname, job_status, accom)
 
