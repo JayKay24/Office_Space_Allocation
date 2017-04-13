@@ -1,4 +1,8 @@
 import unittest
+import sys
+
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 class LivingSpaceTest(unittest.TestCase):
     def setUp(self):
@@ -9,6 +13,14 @@ class LivingSpaceTest(unittest.TestCase):
 
     def testLivingSpaceHasNameAttribute(self):
         self.assertEqual(self.living_space.name, "Black")
+
+class CreateLivingSpaceTests(unittest.TestCase):
+    def setUp(self):
+        self.name = "Red"
+
+    def testCreateLivingSpace(self):
+        self.living_space = create_living_space(self.name)
+        self.assertEqual(self.living_space.name, "Red")
 
 if __name__ == "__main__":
 	unittest.main()
