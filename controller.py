@@ -122,15 +122,13 @@ def display_room(name):
     Accepts a name argument and loops through objects to determine if attributes 
     match name.
     """
-    print("\t" + name)
-    people = staffs + fellows
-
-    for person in people:
+    print("\t" + name + "\n")
+    for person in offices:
         if person.office_name == name:
-            print("\t" + person.firstName, person.lastName)
-        elif person.status.upper() == "FELLOW" and person.living_space_name != "":
-            if person.living_space_name == name:
-                print("\t" + person.firstName, person.lastName)
+            print(person.office_name)
+    for person in living_spaces:
+        if person.living_space_name == name:
+            print(person.living_space_name)
 
 def display_allocations(people, filename=""):
     """
