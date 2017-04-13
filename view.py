@@ -119,7 +119,7 @@ class MyInteractive (cmd.Cmd):
 
     @docopt_cmd
     def do_display_greeting(self, args):
-        """Usage: display_program_greeting"""
+        """Usage: display_greeting"""
         display_prog_greeting()
 
         
