@@ -1,8 +1,8 @@
 # Dojo Office Space Allocator
 
-```
+
 [![Coverage Status](https://coveralls.io/repos/github/JayKay24/Office_Space_Allocation/badge.svg?branch=master)](https://coveralls.io/github/JayKay24/Office_Space_Allocation?branch=master)
-```
+
 
 Dojo Office Space Allocator is an application that is used at the dojo at Andela to randomly allocate Office Spaces and Living
 spaces to Andela Fellows and Staff. A new Andela Fellow is assigned an Office Space and an optional Living space. An Andela staff
