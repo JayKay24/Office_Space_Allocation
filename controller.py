@@ -95,6 +95,7 @@ def allocate_office_space(person):
             random_office_index = offices.index(random_office)
             office = offices.pop(random_office_index)
             full_offices.append(office)
+    print(person.firstName, "has been allocated the office", person.office_name)
 
 def allocate_living_space(person):
     """
