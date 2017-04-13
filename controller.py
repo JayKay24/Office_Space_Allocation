@@ -123,10 +123,13 @@ def display_room(name):
     match name.
     """
     print("\t" + name + "\n")
-    for person in fellows:
+    people = fellows + staffs
+    for person in people:
         if person.office_name == name:
             print(person.office_name)
-    for person in staffs:
+
+    print()
+    for person in fellows:
         if person.living_space_name == name:
             print(person.living_space_name)
 
