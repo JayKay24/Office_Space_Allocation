@@ -129,7 +129,7 @@ def display_room(name):
     for person in people:
         if person.office_name == name:
             print("\t" + person.firstName, person.lastName)
-        elif person.status.upper() == "FELLOW":
+        elif person.status.upper() == "FELLOW" and person.living_space_name != "":
             if person.living_space_name == name:
                 print("\t" + person.firstName, person.lastName)
 
