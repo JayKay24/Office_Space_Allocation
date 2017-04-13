@@ -10,6 +10,7 @@ Usage:
     view print_allocations [<filename>]
     view display_full_offices
     view display_employee_office <fname> <lname>
+    view give_office <fname> <lname>
     view (-i | --interactive)
     view (-h | --help)
 Options:
@@ -28,6 +29,7 @@ from controller import display_offices
 from controller import display_room
 from controller import display_allocations
 from controller import display_prog_greeting
+from controller import allocate_office_space, allocate_living_space
 from model import offices, fellows, staffs, full_offices, full_living_spaces
 
 def docopt_cmd(func):
@@ -121,6 +123,19 @@ class MyInteractive (cmd.Cmd):
     def do_display_greeting(self, args):
         """Usage: display_greeting"""
         display_prog_greeting()
+
+    @docopt_cmd
+    def do_give_office(self, args):
+        """Usage: give_office <fname> <lname>"""
+        fname = args['<fname>']
+        lname = args['<lname>']
+        people = fellows + staffs
+        for person in people:
+            if person.firstName == fname and person.lastName == lname:
+                allocate_office_space(person)
+                break
+        else:
+            print(fname, lname, "is neither a Fellow nor a Staff member.")
 
         
     def do_quit(self, args):
