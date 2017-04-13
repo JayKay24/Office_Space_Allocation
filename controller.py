@@ -111,6 +111,7 @@ def allocate_living_space(person):
             random_living_space_index = living_spaces.index(random_living_space)
             living_space = living_spaces.pop(random_living_space)
             full_living_spaces.append(living_space)
+    print(person.firstName, "has been allocated the living space", person.living_space_name)
 
 
 def create_person(fname, lname, job_status, accom=""):
