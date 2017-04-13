@@ -123,15 +123,17 @@ def display_room(name):
     match name.
     """
     print("\t" + name + "\n")
-    people = fellows + staffs
-    for person in people:
-        if person.office_name == name:
-            print(person.office_name)
+    if fellows != [] and staffs != []:
+        people = fellows + staffs
+        for person in people:
+            if person.office_name == name:
+                print("\t",person.firstName, person.office_name)
 
     print()
-    for person in fellows:
-        if person.living_space_name == name:
-            print(person.living_space_name)
+    if fellows != []:
+        for person in fellows:
+            if person.living_space_name == name:
+                print("\t", person.firstName, person.living_space_name)
 
 def display_allocations(people, filename=""):
     """

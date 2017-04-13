@@ -1,4 +1,8 @@
 import unittest
+import sys
+
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 class StaffTest(unittest.TestCase):
     def setUp(self):
