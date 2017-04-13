@@ -5,7 +5,7 @@ Usage:
     view create_room <room_type> <room_name>...
     view add_person <fname> <lname> <person_job> [<want_accommodation>]
     view display_all_offices
-    view display_program_greeting
+    view display_greeting
     view print_room <room_name>
     view print_allocations [<filename>]
     view display_full_offices

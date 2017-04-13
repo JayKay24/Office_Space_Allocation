@@ -203,6 +203,6 @@ def display_prog_greeting():
     title = " Office Space Allocation System "
     print("\n{:*^80}\n".format(title.title()))
     print("\tThis program randomly allocates Offices and Living SPaces to")
-    print("\t Andela Fellows and Staff. ")
-    print("\n{:*^80s}\n")
+    print("\tAndela Fellows and Staff. ")
+    print("\n{:*^80s}\n".format("*"))
     print()
