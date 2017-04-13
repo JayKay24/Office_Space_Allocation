@@ -122,8 +122,10 @@ def create_person(fname, lname, job_status, accom=""):
         person = Fellow(fname, lname, job_status)
         if accom:
             allocate_living_space(person)
+        fellows.append(person)
     elif job_status.upper() == "STAFF":
         person = Staff(fname, lname, job_status)
+        staffs.append(person)
     
     allocate_office_space(person)
     return person
